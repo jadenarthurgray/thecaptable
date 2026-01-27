@@ -1,0 +1,315 @@
+:root {
+    --brand-color: #000AAD;
+    --brand-color-light: #1a1aff;
+    --bg-dark: #0a0a0a;
+    --text-white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --grid-color: rgba(0, 10, 173, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: relative;
+    overflow-x: hidden;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Grid background */
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2rem 1.5rem 1rem;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 20px var(--brand-color));
+    margin-bottom: 0.75rem;
+}
+
+.tagline {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    max-width: 320px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Section headings */
+section h2 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    color: var(--text-white);
+    text-align: center;
+}
+
+/* Video Section */
+.video-section {
+    width: 100%;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    border: 1px solid var(--brand-color);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 10, 173, 0.3);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Contact Section */
+.contact-section {
+    width: 100%;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: var(--brand-color);
+    border: none;
+    border-radius: 4px;
+    color: var(--text-white);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 20px rgba(0, 10, 173, 0.4);
+}
+
+.contact-button:hover {
+    background: var(--brand-color-light);
+    transform: translateY(-1px);
+}
+
+.contact-button:active {
+    transform: translateY(0);
+}
+
+.contact-button svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Social Section */
+.social-section {
+    width: 100%;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    background-color: var(--brand-color);
+    border-radius: 4px;
+    color: var(--text-white);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.social-links a:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.15);
+}
+
+.social-links a:active {
+    transform: translateY(0);
+}
+
+/* Social colors - all with gradients */
+.social-links a.youtube { background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); }
+.social-links a.instagram { background: linear-gradient(135deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%); }
+.social-links a.x { background: linear-gradient(135deg, #2D2D2D 0%, #000000 100%); border: 1px solid rgba(255,255,255,0.15); }
+.social-links a.linkedin { background: linear-gradient(135deg, #0077B5 0%, #005582 100%); }
+.social-links a.tiktok { background: linear-gradient(135deg, #25F4EE 0%, #000000 50%, #FE2C55 100%); }
+
+.social-links svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: auto;
+}
+
+.footer-email {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+}
+
+.footer-email:hover {
+    color: var(--text-white);
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    header {
+        padding: 3rem 2rem 1.5rem;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        max-width: 400px;
+    }
+
+    main {
+        max-width: 700px;
+        gap: 3rem;
+        padding: 2rem;
+    }
+
+    section h2 {
+        font-size: 1rem;
+    }
+
+    .contact-button {
+        font-size: 1rem;
+        padding: 1.25rem 2rem;
+    }
+
+    .social-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .social-links a {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+
+    .social-links svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        padding: 3rem 2rem;
+    }
+
+    .footer-email {
+        font-size: 0.8rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    header {
+        padding: 4rem 2rem 2rem;
+    }
+
+    .logo {
+        max-width: 140px;
+    }
+
+    main {
+        max-width: 800px;
+    }
+
+    .social-links {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .social-links a {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.25rem 0.75rem;
+    }
+
+    .social-links svg {
+        width: 24px;
+        height: 24px;
+    }
+}

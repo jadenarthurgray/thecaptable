@@ -169,8 +169,8 @@ section h2 {
 }
 
 .listen-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
 }
 
@@ -199,7 +199,6 @@ section h2 {
 }
 
 .listen-links a.spotify { background: linear-gradient(135deg, #1DB954 0%, #169c46 100%); }
-.listen-links a.apple-podcasts { background: linear-gradient(135deg, #9933FF 0%, #7B2BEB 50%, #5C24D6 100%); }
 
 .listen-links svg {
     width: 18px;

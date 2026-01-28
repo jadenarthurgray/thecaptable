@@ -163,6 +163,50 @@ section h2 {
     flex-shrink: 0;
 }
 
+/* Listen Section */
+.listen-section {
+    width: 100%;
+}
+
+.listen-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.listen-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    border-radius: 4px;
+    color: var(--text-white);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.listen-links a:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.15);
+}
+
+.listen-links a:active {
+    transform: translateY(0);
+}
+
+.listen-links a.spotify { background: linear-gradient(135deg, #1DB954 0%, #169c46 100%); }
+.listen-links a.apple-podcasts { background: linear-gradient(135deg, #9933FF 0%, #7B2BEB 50%, #5C24D6 100%); }
+
+.listen-links svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
 /* Social Section */
 .social-section {
     width: 100%;
@@ -275,6 +319,16 @@ footer {
         height: 20px;
     }
 
+    .listen-links a {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+
+    .listen-links svg {
+        width: 20px;
+        height: 20px;
+    }
+
     footer {
         padding: 3rem 2rem;
     }
@@ -311,5 +365,14 @@ footer {
     .social-links svg {
         width: 24px;
         height: 24px;
+    }
+
+    .listen-links a {
+        padding: 1.25rem 1rem;
+    }
+
+    .listen-links svg {
+        width: 22px;
+        height: 22px;
     }
 }

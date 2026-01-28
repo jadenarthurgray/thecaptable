@@ -23,6 +23,7 @@
                 <h2>LATEST VIDEO</h2>
                 <div class="video-container">
                     <iframe
+                        id="latest-video"
                         src="https://www.youtube.com/embed/LcOmSweFeZM"
                         title="Latest Video"
                         frameborder="0"
@@ -95,5 +96,26 @@
             <a href="mailto:contact@thecaptable.tv" class="footer-email">contact@thecaptable.tv</a>
         </footer>
     </div>
+
+    <script>
+        // Fetch and display the latest video from YouTube
+        async function loadLatestVideo() {
+            try {
+                const response = await fetch('/api/latest-video');
+                if (!response.ok) throw new Error('API request failed');
+
+                const data = await response.json();
+                if (data.videoId) {
+                    const iframe = document.getElementById('latest-video');
+                    iframe.src = `https://www.youtube.com/embed/${data.videoId}`;
+                }
+            } catch (error) {
+                console.log('Using fallback video:', error.message);
+                // Fallback video is already set in the HTML
+            }
+        }
+
+        loadLatestVideo();
+    </script>
 </body>
 </html>
